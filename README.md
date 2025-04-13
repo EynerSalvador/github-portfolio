@@ -75,6 +75,22 @@ Sincronizar ramas frecuentemente:
 git pull origin develop
 
 
+📚Guía para Contribuir
+
+Reglas de commits
+
+Seguimos la siguiente convención para los mensajes de commit:
+
+- `feat`: Nueva funcionalidad
+- `fix`: Corrección de errores
+- `docs`: Solo cambios en documentación
+- `test`: Agregar o mejorar pruebas
+- `refactor`: Reestructuración del código sin cambiar su comportamiento
+
+Formato: `tipo: descripción corta en minúsculas`
+
+Ejemplo: `fix: corregir bug en formulario de contacto`
+
 👥 Contribuciones
 Miembro	Rol	Commits	PRs
 Wilder Arredondo	Frontend
