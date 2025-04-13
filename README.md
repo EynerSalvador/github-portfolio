@@ -77,7 +77,7 @@ git pull origin develop
 
 👥 Contribuciones
 Miembro	Rol	Commits	PRs
-Wilder Andrade	Frontend
+Wilder Andres	Frontend
 Edgar Moya	GitFlow Manager
 Anthony Quispe	QA Testing
 Eyner Salvador	Documentación
