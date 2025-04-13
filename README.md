@@ -1,8 +1,6 @@
 # 📚 Proyecto Académico - Grupo A NRC 23729
 **Evaluación Parcial: Gestión de Código con Git y GitHub**
 
-[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/GrupoA-NRC23729/proyecto/deploy.yml?label=Despliegue%20CI/CD)](https://eynersalvador.github.io/github-portfolio/)
-[![GitFlow](https://img.shields.io/badge/GitFlow-Implementado-success)](https://nvie.com/posts/a-successful-git-branching-model/)
 
 ## 🏗️ Estructura del Proyecto
 ├── .github/
