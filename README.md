@@ -77,11 +77,11 @@ git pull origin develop
 
 👥 Contribuciones
 Miembro	Rol	Commits	PRs
-Wilder Andrade	Frontend	15	3
-Edgar Moya	GitFlow Manager	12	2
-Anthony Quispe	QA Testing	10	2
-Eyner Salvador	Documentación	8	1
-Paulo Vásquez	CI/CD Specialist	9	2
+Wilder Andrade	Frontend
+Edgar Moya	GitFlow Manager
+Anthony Quispe	QA Testing
+Eyner Salvador	Documentación
+Paulo Vásquez	CI/CD Specialist
 📊 Métricas del Proyecto
 Total de commits: 54
 
