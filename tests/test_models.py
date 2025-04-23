@@ -34,3 +34,4 @@ def test_profile_creation(app):
         saved = Profile.query.first()
         assert saved.email == "test@example.com"
         assert "Python" in saved.skills
+        
