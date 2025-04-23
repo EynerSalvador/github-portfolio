@@ -1,10 +1,16 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(__name__)
+db = SQLAlchemy()
 
-# Configuración de la base de datos (si usas SQLAlchemy)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///portfolio.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-# Importa rutas o modelos al final para evitar dependencias circulares
-from app import models
+def create_app():
+    app = Flask(__name__)
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    
+    db.init_app(app)
+    
+    with app.app_context():
+        db.create_all()
+    
+    return app
