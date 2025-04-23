@@ -8,4 +8,5 @@ steps:
     run: pip install -r requirements.txt
   - name: Run tests
     run: |
+      cd /workspaces/github-portfolio
       PYTHONPATH=. pytest tests/ -v
