@@ -1,13 +1,14 @@
-from flask import jsonify
-from app import create_app
-from app.katas.models import Profile, db
+from flask import Blueprint, jsonify
+from app.katas.models import Profile
+from app.db.database import db
 
-app = create_app()
+bp = Blueprint('api', __name__)
 
-@app.route('/api/profiles')
+@bp.route('/profiles')
 def get_profiles():
     profiles = Profile.query.all()
     return jsonify([{
         'name': p.name,
-        'skills': p.skills
+        'skills': p.skills,
+        'projects': p.projects
     } for p in profiles])
