@@ -6,9 +6,12 @@ bp = Blueprint('api', __name__)
 
 @bp.route('/profiles')
 def get_profiles():
-    profiles = Profile.query.all()
-    return jsonify([{
-        'name': p.name,
-        'skills': p.skills,
-        'projects': p.projects
-    } for p in profiles])
+    try:
+        profiles = Profile.query.all()
+        return jsonify([{
+            'name': p.name,
+            'skills': p.skills,
+            'projects': p.projects
+        } for p in profiles])
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
