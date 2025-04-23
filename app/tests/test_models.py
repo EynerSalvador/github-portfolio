@@ -1,22 +1,10 @@
-import pytest
-from app import app, db  # Importa app y db
-from app.models import Post
+from app.models import Profile
 
-# Configuración para pruebas
-@pytest.fixture
-def client():
-    app.config['TESTING'] = True
-    with app.test_client() as client:
-        with app.app_context():
-            db.create_all()  # Crea tablas antes de las pruebas
-        yield client
-        with app.app_context():
-            db.drop_all()  # Limpia la DB después
+def test_profile_skill_validation():
+    profile = Profile(skills=["Python"])
+    assert profile.validate_skill("Python") is True
+    assert profile.validate_skill("Java") is False
 
-def test_create_post(client):
-    """Prueba que se pueda crear un Post."""
-    with app.app_context():
-        post = Post(title="Prueba pytest", content="¡Funciona!")
-        db.session.add(post)
-        db.session.commit()
-        assert post.id is not None  # Verifica que se guardó
+def test_profile_project_filtering():
+    profile = Profile(projects=[{"name": "API", "technologies": ["Python"]}])
+    assert len(profile.get_projects_by_tech("Python")) == 1
