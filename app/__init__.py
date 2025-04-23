@@ -1,6 +1,9 @@
 from flask import Flask
 from .db.database import db  # Import relativo
 
+from app.katas.models import Profile
+from app.db.database import db
+
 def create_app():
     app = Flask(__init__)
     
