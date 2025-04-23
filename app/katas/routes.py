@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify
-from app.katas.models import Profile
+from ..models import Profile
 from app.db.database import db
 
 bp = Blueprint('api', __name__)
