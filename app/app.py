@@ -1,17 +1,16 @@
-from flask import Flask
-from app.models import db, Post
+from app.katas.kata_validation import validate_post
+from app.models import Post
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../db/database.db'
-db.init_app(app)
-
-# Crear tablas antes de las pruebas
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
-# Ruta de ejemplo
-@app.route('/posts')
-def get_posts():
-    posts = Post.query.all()
-    return {"posts": [post.to_dict() for post in posts]}
+@app.route('/create-post', methods=['POST'])
+def create_post():
+    title = request.form.get('title')
+    content = request.form.get('content')
+    
+    if not validate_post(title, content):  # Usamos la Kata aquí
+        return {"error": "Título inválido"}, 400
+    
+    new_post = Post(title=title, content=content)  # Código existente
+    db.session.add(new_post)
+    db.session.commit()
+    
+    return {"success": True}
