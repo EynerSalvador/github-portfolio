@@ -1,8 +1,8 @@
 from flask import Flask
-from .db.database import db  # Nota el punto al inicio
+from .db.database import db  # Import relativo
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__init__)
     
     # Configuración de la base de datos
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///portfolio.db'
@@ -11,8 +11,8 @@ def create_app():
     # Inicialización de extensiones
     db.init_app(app)
     
-    # Registrar blueprints/rutas
-    from app.katas.routes import bp as katas_bp
+    # Registrar blueprints/rutas (¡CAMBIADO A IMPORT RELATIVO!)
+    from .katas.routes import bp as katas_bp  # Nota el punto inicial
     app.register_blueprint(katas_bp, url_prefix='/api')
     
     return app
