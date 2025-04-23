@@ -9,5 +9,5 @@ class Profile(db.Model):
     projects = db.Column(db.JSON) # Ej: [{"name": "Proyecto X", "tech": ["React"]}]
 
     def __repr__(self):
-        return f'<Profile {self.email}>'
+        return f'<Profile {self.email}>' 
 
