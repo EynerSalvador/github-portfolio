@@ -1,11 +1,13 @@
-def validate_skill(skill: str, allowed_skills: list[str]) -> bool:
-    """Valida si una habilidad está permitida.
+from app.katas.validation import validate_skill
+
+def test_validate_skill():
+    allowed = ["Python", "JavaScript", "HTML"]
     
-    Args:
-        skill: Habilidad a validar (ej: 'JavaScript').
-        allowed_skills: Lista de habilidades permitidas.
+    # Caso 1: Habilidad permitida
+    assert validate_skill("Python", allowed) is True
     
-    Returns:
-        True si es válida, False si no.
-    """
-    return skill in allowed_skills
+    # Caso 2: Habilidad no permitida
+    assert validate_skill("Java", allowed) is False
+    
+    # Caso 3: Habilidad vacía
+    assert validate_skill("", allowed) is False
