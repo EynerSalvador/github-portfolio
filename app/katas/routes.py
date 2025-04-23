@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify
 from ..models import Profile
-from app.db.database import db
+from ..db.database import db  # Cambiado a import relativo
 
 bp = Blueprint('api', __name__)
 
