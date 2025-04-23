@@ -1,4 +1,5 @@
 import sys
+print(sys.path)  # Verifica las rutas de importación
 from pathlib import Path
 
 # Añade el directorio raíz al path
