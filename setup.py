@@ -7,6 +7,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         "flask==3.0.2",
-        "flask-sqlalchemy==3.1.1"
+        "flask-sqlalchemy==3.1.1",
+        "pytest==8.3.5"
     ],
 )
