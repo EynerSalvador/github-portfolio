@@ -1,5 +1,5 @@
 from flask import Flask
-from app.db.database import db
+from .db.database import db  # Nota el punto al inicio
 
 def create_app():
     app = Flask(__name__)
