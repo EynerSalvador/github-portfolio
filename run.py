@@ -1,9 +1,7 @@
 # run.py
+import os
 import sys
-from pathlib import Path
-
-# Añade el directorio raíz al path de Python
-sys.path.append(str(Path(__file__).parent))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from app import create_app
 
